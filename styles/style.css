@@ -1,0 +1,133 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Barlow', sans-serif;
+}
+body{
+    background-color: #fafafe;
+}
+.container{
+    width: 85%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+/* HEADER */
+header{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.4);
+}
+header div.logo{
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+header div.logo a{
+    font-size: 40px;
+    font-family: 'Source Code Pro', monospace;
+    color: #ccc;
+    translate: .4s all ease;
+}
+header div.logo a:hover{
+    color: grey;
+}
+
+/* NAV */
+nav{
+    /* background-color: #797775; */
+    height: 100%;
+}
+nav ul{
+    height: 45px;
+    display: flex;
+    /* align-items: center; */
+}
+nav ul li{
+    height: inherit;
+
+}
+nav ul li a{
+    height: 100%;
+    padding: 0 10px;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border: 1px solid transparent ;
+    transition: .4s all ease;
+}
+nav ul li a:hover{
+    background-color: #fafafe;
+    color: grey;
+    border: 1px solid #ccc;
+}
+
+/* SIDEBAR */
+div.main{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row-reverse;
+    margin: 30px auto;
+}
+aside{
+    width: 25%;
+
+}
+
+/* MAIN */
+
+main{
+    width: 70%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
+    margin-left: 20px;
+}
+main section.posts h1{
+    color: grey;
+    font-size: 28px;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+article.post a{
+    padding: 15px;
+    display: block;
+    color: #666;
+}
+article.post h2{
+    margin: 10px auto;
+    color: #9B804A;
+    font-weight: 600;
+    font-family: 'Barlow', sans-serif;
+}
+div.mas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+}
+div.mas a{
+    display: block;
+    text-align: center;
+    padding: 7px;
+    color: #fafafe;
+    background-color: #9B804A;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: .4s all ease;
+}
+div.mas a:hover{
+    color: #9B804A;
+    background-color: #fafafe;
+    border: 1px solid #9B804A;
+}
