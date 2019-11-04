@@ -1,5 +1,7 @@
+<?php require_once('includes/conexion.php') ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,67 +13,9 @@
 </head>
 
 <body>
-    <!-- HEADER -->
-    <header>
-        <div class="logo container">
-            <a href="index.php">Blog ./bash</a>
-        </div>
-        <!-- NAV -->
-        <nav>
-            <ul class="container">
-                <li><a href="index.php">Inicio</a></li>
-                <li><a href="">Categoria</a></li>
-                <li><a href="">Categoria</a></li>
-                <li><a href="">Categoria</a></li>
-                <li><a href="">Sobre mi</a></li>
-                <li><a href="">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php require_once('includes/header.php') ?>
     <div class="main container">
-        <!-- SIDEBAR -->
-        <aside>
-            <div id="login">
-                <h3>Identificate</h3>
-                <form action="login.php" method="POST">
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div>
-                        <label for="password">Contraseña:</label>
-                        <input type="pass" name="password" id="password">
-                    </div>
-                    <div>
-                        <input type="submit" value="Ingresar">
-                    </div>
-                </form>
-            </div>
-            <div id="register">
-                <h3>Registrate</h3>
-                <form action="register.php" method="POST">
-                    <div>
-                        <label for="name">Nombre:</label>
-                        <input type="text" name="name" id="name">
-                    </div>
-                    <div>
-                        <label for="surname">Apellido:</label>
-                        <input type="text" name="surname" id="surname">
-                    </div>
-                    <div>
-                        <label for="email">Email:</label>
-                        <input type="email" name="email" id="email">
-                    </div>
-                    <div>
-                        <label for="password">Contraseña:</label>
-                        <input type="pass" name="password" id="password">
-                    </div>
-                    <div>
-                        <input type="submit" value="Registrarse">
-                    </div>
-                </form>
-            </div>
-        </aside>
+    <?php require_once('includes/sidebar.php') ?>
         <!-- MAIN -->
         <main>
             <section class="posts">
@@ -109,17 +53,12 @@
                 <div class="mas">
                     <a href="">Ver todos los post</a>
                 </div>
-           
+
             </section>
         </main>
-
     </div>
-    <!-- FOOTER -->
-    <footer>
-        <div>
-            <p>Desarrollado por <b>David Fabian</b> &COPY; 2019</p>
-        </div>
-    </footer>
+    <?php require_once('includes/footer.php') ?>
+    <script src="app/script.js"></script>
 </body>
 
 </html>

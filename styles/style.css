@@ -78,9 +78,129 @@ div.main{
 }
 aside{
     width: 25%;
-
+    height: fit-content;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.2);
+    
 }
 
+.active{
+    display: block !important;
+}
+aside label{
+    color: #ccc;
+    font-size: 18px;
+    font-family: 'Source Code Pro', monospace;
+} 
+/* MENU ASIDE */
+div.menu-aside{
+    background-color:transparent;
+    color: #fafafe;
+    display: flex;
+    
+}
+div.menu-aside button{
+    background: transparent;
+    width: 50%;
+    height: 40px;
+    color: grey;
+    border: 1px solid rgba(0,0,0,0.2);
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+div.menu-aside button:hover{
+    background-color: #fafafe;
+    color: grey;
+    border: 1px solid #ccc;
+}
+div.menu-aside button:focus{
+    background: #ccc;
+    color: #fff;
+    transition: .4s all ease;
+
+}
+div.menu-aside button.login{
+    border-top-left-radius: 20px;
+}
+div.menu-aside button.register{
+    border-top-right-radius: 20px;
+}
+/* LOGIN*/
+#login{
+    padding: 20px;
+    display: none;
+}
+#login input[type='email'],
+#login input[type="password"]{
+    width: 100%;
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: #666;
+    font-size: 16px;
+}
+#login input[type='email']:hover,
+#login input[type="password"]:hover{
+    border: 1px solid #9B804A;
+}
+#login input[type='email']:focus,
+#login input[type="password"]:focus{
+    border: 2px solid #9B804A;
+    transition: .2s all ease;
+}
+div.submit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+}
+aside input[type='submit']{
+    display: block;
+    text-align: center;
+    padding: 7px;
+    color: #fafafe;
+    background-color: #9B804A;
+    width: 150px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: .4s all ease;
+}
+aside input[type='submit']:hover{
+    color: #9B804A;
+    background-color: #fafafe;
+    border: 1px solid #9B804A;
+}
+/* REGISTER */
+#register{
+    padding: 20px;
+    display: none;
+}
+#register input[type='text'],
+#register input[type='email'],
+#register input[type="password"]{
+    width: 100%;
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: #666;
+    font-size: 16px;
+}
+#register input[type='text']:hover,
+#register input[type='email']:hover,
+#register input[type="password"]:hover{
+    border: 1px solid #9B804A;
+}
+#register input[type='text']:focus,
+#register input[type='email']:focus,
+#register input[type="password"]:focus{
+    border: 2px solid #9B804A;
+    transition: .2s all ease;
+}
 /* MAIN */
 
 main{
@@ -130,4 +250,11 @@ div.mas a:hover{
     color: #9B804A;
     background-color: #fafafe;
     border: 1px solid #9B804A;
+}
+/* FOOTER */
+footer{
+    background-color: #ccc;
+    padding: 5px;
+    text-align: center;
+    color: rgba(0,0,0,0.4);
 }
