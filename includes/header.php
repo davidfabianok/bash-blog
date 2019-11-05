@@ -7,9 +7,11 @@
     <nav>
         <ul class="container">
             <li><a href="index.php">Inicio</a></li>
-            <li><a href="">Categoria</a></li>
-            <li><a href="">Categoria</a></li>
-            <li><a href="">Categoria</a></li>
+            <?php 
+               $categories =  categories($conexion);
+               foreach($categories as $category) : ?>
+               <li><a href="index.php?c=<?=$category['id']?>"><?=$category['name']?></a></li>
+               <?php endforeach ?>
             <li><a href="">Sobre mi</a></li>
             <li><a href="">Contacto</a></li>
         </ul>

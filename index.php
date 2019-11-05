@@ -30,36 +30,19 @@ require_once('includes/helpers.php');
         <main>
             <section class="posts">
                 <h1>Ultimos posts</h1>
-                <article class="post">
-                    <a href="">
-                        <h2>TITULO POST</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ratione voluptates corrupti totam, ea ullam mollitia laboriosam officia vero distinctio exercitationem molestiae sed, at minima omnis voluptatum eos! Dolore, quas. Corrupti nulla necessitatibus odio tempore fuga dolorum. Voluptates sequi itaque earum! Corrupti eum fugit nam maxime qui ducimus officia quisquam!</p>
+               
+               <?php 
+               $posts=posts($conexion);
+               foreach ($posts as $post) : ?>
+                 <article class="post">
+                    <a href="index.php?p=<?=$post['id']?>">
+                        <h2><?=$post['title']?></h2>
+                        <span class="info"><?='Categoria: ' . $post['category'] . '  |  ' . $post['date']?></span>
+                        <p><?=substr($post['decription'], 0, 300) . '...'?></p>
                     </a>
                 </article>
-                <article class="post">
-                    <a href="">
-                        <h2>TITULO POST</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ratione voluptates corrupti totam, ea ullam mollitia laboriosam officia vero distinctio exercitationem molestiae sed, at minima omnis voluptatum eos! Dolore, quas. Corrupti nulla necessitatibus odio tempore fuga dolorum. Voluptates sequi itaque earum! Corrupti eum fugit nam maxime qui ducimus officia quisquam!</p>
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="">
-                        <h2>TITULO POST</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ratione voluptates corrupti totam, ea ullam mollitia laboriosam officia vero distinctio exercitationem molestiae sed, at minima omnis voluptatum eos! Dolore, quas. Corrupti nulla necessitatibus odio tempore fuga dolorum. Voluptates sequi itaque earum! Corrupti eum fugit nam maxime qui ducimus officia quisquam!</p>
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="">
-                        <h2>TITULO POST</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ratione voluptates corrupti totam, ea ullam mollitia laboriosam officia vero distinctio exercitationem molestiae sed, at minima omnis voluptatum eos! Dolore, quas. Corrupti nulla necessitatibus odio tempore fuga dolorum. Voluptates sequi itaque earum! Corrupti eum fugit nam maxime qui ducimus officia quisquam!</p>
-                    </a>
-                </article>
-                <article class="post">
-                    <a href="">
-                        <h2>TITULO POST</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ratione voluptates corrupti totam, ea ullam mollitia laboriosam officia vero distinctio exercitationem molestiae sed, at minima omnis voluptatum eos! Dolore, quas. Corrupti nulla necessitatibus odio tempore fuga dolorum. Voluptates sequi itaque earum! Corrupti eum fugit nam maxime qui ducimus officia quisquam!</p>
-                    </a>
-                </article>
+
+               <?php endforeach ?>
                 <div class="mas">
                     <a href="">Ver todos los post</a>
                 </div>

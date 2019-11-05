@@ -250,10 +250,17 @@ article.post a{
     color: #666;
 }
 article.post h2{
-    margin: 10px auto;
+    margin: 0px auto;
     color: #9B804A;
     font-weight: 600;
     font-family: 'Barlow', sans-serif;
+}
+article.post span.info{
+    color: rgba(0,0,0,0.4);
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 div.mas{
     display: flex;
