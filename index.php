@@ -1,4 +1,8 @@
-<?php require_once('includes/conexion.php') ?>
+<?php
+require_once('includes/conexion.php');
+require_once('includes/helpers.php');
+?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +19,13 @@
 <body>
     <?php require_once('includes/header.php') ?>
     <div class="main container">
-    <?php require_once('includes/sidebar.php') ?>
+        <?php
+        if (isset($_SESSION['user'])) {
+            require_once('includes/user.php');
+        } else {
+            require_once('includes/sidebar.php');
+        }
+        ?>
         <!-- MAIN -->
         <main>
             <section class="posts">

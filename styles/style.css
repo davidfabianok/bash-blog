@@ -128,6 +128,30 @@ div.menu-aside button.login{
 div.menu-aside button.register{
     border-top-right-radius: 20px;
 }
+span.alert{
+    font-size: 13px;
+    color: #FF9494;
+    font-weight: 500;
+    display: inline-block;
+}
+span.success{
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+    color: #4BB543;
+}
+/* USER */
+aside div.user{
+    text-align: center;
+    padding: 20px;
+   
+}
+aside div.user a{
+    margin: 4px auto;
+    display: block;
+    width: 130px;
+}
+
 /* LOGIN*/
 #login{
     padding: 20px;
@@ -158,7 +182,8 @@ div.submit{
     justify-content: center;
     margin: 15px auto;
 }
-aside input[type='submit']{
+aside input[type='submit'],
+aside a.btn{
     display: block;
     text-align: center;
     padding: 7px;
@@ -169,7 +194,8 @@ aside input[type='submit']{
     border: 1px solid transparent;
     transition: .4s all ease;
 }
-aside input[type='submit']:hover{
+aside input[type='submit']:hover,
+aside a.btn:hover{
     color: #9B804A;
     background-color: #fafafe;
     border: 1px solid #9B804A;
