@@ -1,5 +1,7 @@
 <?php 
-session_start();
+if(!isset($_SESSION)){
+    session_start();
+}
 
 try {
     $conexion = new PDO('mysql:host=localhost;dbname=blog_bash;charset=utf8mb4','root','52752');
