@@ -1,6 +1,16 @@
 <?php
 require_once('includes/conexion.php');
 require_once('includes/helpers.php');
+
+
+if (isset($_GET['p'])) {
+    $post = post($conexion, $_GET['p']);
+    if (!$post) {
+        header('Location: index.php');
+    }
+} else {
+    header('Location: index.php');
+}
 ?>
 
 
@@ -11,7 +21,7 @@ require_once('includes/helpers.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog ./bash</title>
+    <title>Blog ./bash - <?= $post['title'] ?></title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700,900|Source+Code+Pro:300,400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -29,25 +39,21 @@ require_once('includes/helpers.php');
         <!-- MAIN -->
         <main>
             <section class="posts">
-                <h1>Ultimos posts</h1>
-               
-               <?php 
-               $posts=posts($conexion,4);
-               foreach ($posts as $post) : ?>
-                 <article class="post">
-                    <a href="post.php?p=<?=$post['id']?>">
-                        <h2><?=$post['title']?></h2>
-                        <span class="info"><?='Categoria: ' . $post['category'] . '  |  ' . $post['date']?></span>
-                        <p><?=substr($post['decription'], 0, 300) . '...'?></p>
-                    </a>
-                </article>
-
-               <?php endforeach ?>
-                <div class="mas">
-                    <a href="allPosts.php">Ver todos los post</a>
+                <h1><?= $post['title'] ?></h1>
+                <a href="category.php?c=<?= $post['category_id'] ?>">
+                    <h3><?= $post['category'] ?></h3>
+                </a>
+                <h4><?= $post['nameuser'] ?? Admin ?> | <?= $post['date'] ?></h4>
+                <div>
+                    <p><?= $post['decription'] ?></p>
                 </div>
-
             </section>
+            <div class="mas">
+                <?php if (isset($_SESSION['user']) && $_SESSION['user']['id'] == $post['user_id']) : ?>
+                    <a class="btn" href="editPost.php?p=<?=$post['id']?>">Editar post</a>
+                    <a class="btn" href="deletePost.php?p=<?=$post['id']?>">Eliminar post</a>
+                <?php endif ?>
+            </div>
         </main>
     </div>
     <?php require_once('includes/footer.php') ?>

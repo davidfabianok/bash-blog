@@ -10,7 +10,7 @@
             <?php 
                $categories =  categories($conexion);
                foreach($categories as $category) : ?>
-               <li><a href="index.php?c=<?=$category['id']?>"><?=$category['name']?></a></li>
+               <li><a href="category.php?c=<?=$category['id']?>"><?=$category['name']?></a></li>
                <?php endforeach ?>
             <li><a href="">Sobre mi</a></li>
             <li><a href="">Contacto</a></li>

@@ -183,11 +183,12 @@ div.submit{
     justify-content: center;
     margin: 15px auto;
 }
-aside input[type='submit'],
-aside a.btn{
+input[type='submit'],
+a.btn{
     display: block;
     text-align: center;
     padding: 7px;
+    margin: 0px 10px;
     color: #fafafe;
     background-color: #9B804A;
     width: 150px;
@@ -196,7 +197,7 @@ aside a.btn{
     transition: .4s all ease;
 }
 aside input[type='submit']:hover,
-aside a.btn:hover{
+a.btn:hover{
     color: #9B804A;
     background-color: #fafafe;
     border: 1px solid #9B804A;

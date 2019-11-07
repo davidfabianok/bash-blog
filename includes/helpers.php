@@ -24,10 +24,33 @@ function categories($conexion){
     }  
 }
 
-function posts($conexion){
+function category($conexion, $id){
+    $statement = $conexion->prepare('SELECT * FROM categories WHERE id = :id LIMIT 1');
+    $statement->execute(array(
+        ':id'=>$id
+    ));
+    $category = $statement->fetch();
+
+    return $category;
+}
+
+function posts($conexion, $limit = null, $category = null){
     $statement = $conexion->prepare('SET lc_time_names = "es_ES"');
     $statement->execute();
-    $statement = $conexion->prepare('SELECT p.*, c.name AS category, DATE_FORMAT(date, "%W %e %M %Y") AS date FROM posts p INNER JOIN categories c ON c.id = p.category_id ORDER BY p.id DESC LIMIT 6');
+    $prepare = 'SELECT p.*, c.name AS category, DATE_FORMAT(date, "%W %e %M %Y") AS date FROM posts p INNER JOIN categories c ON c.id = p.category_id ';
+    
+    if($category){
+        $prepare .= " WHERE c.name = '$category' ";
+    }
+
+    $prepare .= ' ORDER BY p.id DESC ';
+
+    if($limit){
+        $prepare .= " LIMIT $limit";
+    }
+    
+    $statement = $conexion->prepare($prepare);
+
     $statement->execute();
     $posts = $statement->fetchAll();
 
@@ -36,5 +59,15 @@ function posts($conexion){
     } else {
         return false;
     }
+}
+function post($conexion, $id){
+    $statement = $conexion->prepare('SET lc_time_names = "es_ES"');
+    $statement->execute();
+    $statement = $conexion->prepare('SELECT p.*,CONCAT(u.name," ", u.surname) AS nameuser, c.name AS category, DATE_FORMAT(p.date, "%W %e %M %Y") AS date FROM posts p LEFT JOIN categories c ON c.id = p.category_id AND p.id = :id LEFT JOIN users u ON p.user_id = u.id ');
+    $statement->execute(array(
+        ':id'=>$id
+    ));
+    $post = $statement->fetch();
+    return $post;
 }
 

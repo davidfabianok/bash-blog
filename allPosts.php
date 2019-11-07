@@ -11,7 +11,7 @@ require_once('includes/helpers.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Blog ./bash</title>
+    <title>Todos los Posts</title>
     <link href="https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700,900|Source+Code+Pro:300,400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
@@ -29,10 +29,10 @@ require_once('includes/helpers.php');
         <!-- MAIN -->
         <main>
             <section class="posts">
-                <h1>Ultimos posts</h1>
+                <h1>Todos posts</h1>
                
                <?php 
-               $posts=posts($conexion,4);
+               $posts=posts($conexion);
                foreach ($posts as $post) : ?>
                  <article class="post">
                     <a href="post.php?p=<?=$post['id']?>">
@@ -43,9 +43,6 @@ require_once('includes/helpers.php');
                 </article>
 
                <?php endforeach ?>
-                <div class="mas">
-                    <a href="allPosts.php">Ver todos los post</a>
-                </div>
 
             </section>
         </main>
